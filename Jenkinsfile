@@ -15,7 +15,7 @@ pipeline {
     
 stage("Package") {
      steps {
-          sh "/usr/bin/mvn build"
+          sh "/usr/bin/mvn package"
      }
 }
 stage("Docker build") {
@@ -28,14 +28,14 @@ stage("Docker build") {
 stage("Deploy to staging") {
      steps {
  
-          sh "docker run -d --rm -p 8090:8080 --name Testtocat deepak_tomcat"
+          sh "docker run -d --rm -p 8090:8080 --name Testtomcat deepak_tomcat"
      }
 }
 
      }
   post {
      always {
-          sh "docker stop calculator_1"
+          sh "docker stop Testtomcat"
      }
 }
 }
