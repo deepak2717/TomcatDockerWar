@@ -21,27 +21,17 @@ stage("Package") {
 stage("Docker build") {
      steps {
       
-          sh "docker build -t nikhilnidhi/calculator_1 ."
+          sh "docker build -t deepak_tomcat ."
      }
 }
-stage("Docker push") {
-     steps {
-   sh "docker login -u username -p password"
-sh "docker push nikhilnidhi/calculator_1"
-     }
-}
+
 stage("Deploy to staging") {
      steps {
  
-          sh "docker run -d --rm -p 8765:8080 --name calculator_1 nikhilnidhi/calculator_1"
+          sh "docker run -d --rm -p 8090:8080 --name Testtocat deepak_tomcat"
      }
 }
-stage("Acceptance test") {
-     steps {
-          sleep 60
-          sh "./acceptance_test.sh"
-     }
-}
+
      }
   post {
      always {
