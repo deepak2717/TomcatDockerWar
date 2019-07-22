@@ -28,7 +28,7 @@ stage("Docker build") {
 stage("Deploy to staging") {
      steps {
  
-          sh "docker run -d -it -p 8090:8080 --name Testtomcat deepak_tomcat"
+          sh "docker run -d -it -v /var/lib/jenkins/workspace/pipelineProjectDocker/target/JenkinsWar.war:/usr/local/tomcat/webapps/ -p 8090:8080 --name Testtomcat deepak_tomcat"
      }
 }
 
