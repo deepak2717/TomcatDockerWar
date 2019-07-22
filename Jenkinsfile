@@ -35,7 +35,7 @@ stage("Deploy to staging") {
      }
   post {
      always {
-          sh "docker stop Testtomcat"
+          sh "echo 'I did It'"
      }
 }
 }
