@@ -3,19 +3,19 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
-                    sh "./gradlew compileJava"
+                    sh "/usr/bin/mvn compile"
                }
           }
           stage("Unit test") {
                steps {
-                    sh "./gradlew test"
+                    sh "/usr/bin/mvn test"
                }
           }
      
     
 stage("Package") {
      steps {
-          sh "./gradlew build"
+          sh "/usr/bin/mvn build"
      }
 }
 stage("Docker build") {
