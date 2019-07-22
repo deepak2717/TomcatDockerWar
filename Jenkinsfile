@@ -28,7 +28,7 @@ stage("Docker build") {
 stage("Deploy to staging") {
      steps {
  
-          sh "docker run -d --rm -p 8090:8080 --name Testtomcat deepak_tomcat"
+          sh "docker run -d -it -p 8090:8080 --name Testtomcat deepak_tomcat"
      }
 }
 
