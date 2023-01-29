@@ -2,23 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jenkins.demo</groupId>
-  <artifactId>JenkinsWar1</artifactId>
+  <artifactId>MyWebApp</artifactId>
   <packaging>war</packaging>
   <version>0.0.4-SNAPSHOT</version>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <reporting>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <configLocation>file:///C/Users/Nivaan/jenkins/workspace/TomcatDeployment/checkstyle.xml</configLocation>
-            </configuration>
-        </plugin>
-    </plugins>
-</reporting>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -28,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>JenkinsWar</finalName>
+    <finalName>MyWebApp</finalName>
   </build>
 </project>
